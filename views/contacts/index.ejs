@@ -1,0 +1,45 @@
+<% include  ../header %>
+<header>
+    <h1 class="text-center">Ntalk</h1>
+    <h4 class="text-center">List of Contacts</h4>
+</header>
+<section>
+    <p>Welcome <%- user.name %></p>
+</section>
+<section>
+<div class="form-group">
+    <form action="/contact" method="post">
+        <input class="form-control" type="text" name="contact[name]" placeholder="Name">
+        <br/>
+        <input class="form-control" type="text" name="contact[email]" placeholder="email">
+        <br/>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% contacts.forEach(function (contact, index) { %>
+        <tr>
+            <td><%- contact.name %></td>
+            <td><%- contact.email %></td>
+            <td>
+                <a href="/contact/<%- index %>">Details</a>
+                <a href="/chat">Talk</a>
+            </td>
+        </tr>
+        <% }) %>
+        </tbody>
+    </table>
+</div>
+</section>
+<% include  ../exit %>
+<% include  ../footer %>
+

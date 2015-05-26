@@ -1,0 +1,25 @@
+{
+  "name": "ntalk",
+  "version": "0.0.0",
+  "authors": [
+    "cazlu8 <nereumenon@hotmail.com>"
+  ],
+  "description": "Chat real time",
+  "main": "app.js",
+  "keywords": [
+    "chat"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/vendor"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3"
+  }
+}
