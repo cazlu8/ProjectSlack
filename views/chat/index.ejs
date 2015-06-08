@@ -1,13 +1,13 @@
 <% include ../header %>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/javascripts/socket.js"></script>
+<script src="/javascripts/private.js"></script>
 <header>
     <h2>Ntalk - chat</h2>
 </header>
 <section>
     <pre id="chat"></pre>
     <input type="text" id="msg" placeholder="Message"/>
-    <button onclick="send()">Send</button>
+    <button id="send">Send</button>
 </section>
 <% include ../exit %>
 <% include ../footer %>

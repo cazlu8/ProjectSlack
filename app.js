@@ -2,7 +2,6 @@
 var KEY = 'ntalk.sid', SECRET = 'ntalk';
 var express = require('express')
     , path = require('path')
-    , favicon = require('serve-favicon')
     , logger = require('morgan')
     , cookieParser = require('cookie-parser')
     , bodyParser = require('body-parser')
@@ -39,10 +38,10 @@ io.use(function (socket, next) {
         store.get(sessionID, function (err, session) {
             if (err || !session) {
                 return next(new Error('Acess Denied!'));
-            } else {
-                socket.handshake.session = session;
-                return next();
             }
+            socket.handshake.session = session;
+            return next();
+
         });
     });
 });
@@ -63,3 +62,5 @@ server.listen(3000, function () {
 });
 
 module.exports = app;
+
+
